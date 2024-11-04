@@ -59,7 +59,7 @@ int countNodes() {
 // Function to calculate the height of the binary tree without log2 and ceil
 int calculateHeight(int index) {
     if (index >= size) {
-        return -1;  // If node is empty or doesn't exist, return -1 (base height)
+        return 0;  // If node is empty or doesn't exist, return -1 (base height)
     }
     int leftHeight = calculateHeight(2 * index + 1);  // Height of the left subtree
     int rightHeight = calculateHeight(2 * index + 2); // Height of the right subtree
