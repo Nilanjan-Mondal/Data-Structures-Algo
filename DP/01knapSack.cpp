@@ -7,11 +7,11 @@ using namespace std;
 // Function to solve the 0/1 Knapsack problem using memoization
 int knapsackUtil(vector<int> &wt, vector<int> &val, int ind, int W,
                  vector<vector<int>> &dp) {
-  // Base case: If there are no items left or the knapsack has no capacity,
-  // return 0
-  if (ind == 0 || W == 0) {
-    return 0;
+
+  if (ind == 0) {
+    return (wt[0] <= W) ? val[0] : 0;
   }
+
 
   // If the result for this state is already calculated, return it
   if (dp[ind][W] != -1) {
@@ -40,9 +40,9 @@ int knapsack(vector<int> &wt, vector<int> &val, int n, int W) {
 }
 
 int main() {
-  vector<int> wt = {1, 2, 4, 5};
-  vector<int> val = {5, 4, 8, 6};
-  int W = 5;
+  vector<int> wt = {25,35,15,10};
+  vector<int> val = {100,58,75,20};
+  int W = 50;
   int n = wt.size();
 
   cout << "The Maximum value of items the thief can steal is "
